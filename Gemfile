@@ -13,7 +13,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
-gem 'paperclip'
+gem "paperclip-dropbox", ">= 1.1.7"
 gem "dropbox-api"
 group :development do
   gem 'better_errors'
