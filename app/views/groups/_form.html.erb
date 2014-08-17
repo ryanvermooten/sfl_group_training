@@ -1,0 +1,39 @@
+<%= form_for @group, html: { multipart: true } do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= f.hidden_field :user_id %>
+
+  <div class="field">
+    <%= f.label :group_name %><br>
+    <%= f.text_field :group_name %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="form-group">
+  <%= f.label :group_picture %>
+  <%= f.file_field :group_picture, html: { class: 'form-control' } %>
+  <% if f.object.group_picture? %>
+      <br />
+      <%= image_tag(f.object.group_picture.url(:thumb)) %> <br />
+      <em> Currently Uploaded Image </em>
+
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save",  class: "btn btn-primary" %>
+  </div>
+<% end %>
