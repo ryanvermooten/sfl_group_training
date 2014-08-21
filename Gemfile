@@ -15,9 +15,12 @@ gem 'devise'
 gem 'pundit'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "dropbox-api"
-gem 's3_direct_upload'
+#gem 's3_direct_upload'
+gem 'capistrano'
+gem 'unicorn'
 group :development do
   gem 'better_errors'
+  gem 'capistrano-rails', '~> 1.1.1'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
