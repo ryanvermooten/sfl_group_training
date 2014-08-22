@@ -15,6 +15,9 @@ gem 'devise'
 gem 'pundit'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "dropbox-api"
+#gem 's3_direct_upload'
+gem 'capistrano', '~> 2.15.5'
+gem 'unicorn'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
