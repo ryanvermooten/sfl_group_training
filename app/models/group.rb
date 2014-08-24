@@ -7,7 +7,7 @@ class Group < ActiveRecord::Base
 	:storage => :dropbox,
 	:dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
 	:styles => { :medium => "300x300>", :thumb => "100x100>" },
-	:default_url => "/images/:style/missing.png",
+	:default_url => "/images/missing_pic.jpeg",
   	:dropbox_options => {       
 	:path => proc { |style| "#{style}/#{id}_#{group_picture.original_filename}"},       
 	:unique_filename => true   
