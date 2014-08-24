@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+<strong>Home</strong>
+</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th> </th>
+    <th> First Name </th>
+    <th> Address</th>
+    <th> Contact Number</th>
+
+  </tr>
+  </thead>
+  <tbody>
+      <tr>
+
+
+        <td><%= image_tag @gardener.avatar.url(:thumb), :class => "img-circle" %></td>
+        <td><%= @gardener.first_name %></td>
+        <td><%= @gardener.address %></td>
+        <td><%= @gardener.contact_number %></td>
+
+        <td><%= link_to 'Edit', edit_group_gardener_path(@gardener.group, @gardener), class: "btn btn-sm btn-success" %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Back', groups_path, class: "btn btn-sm btn-danger" %> 
+
+</div>

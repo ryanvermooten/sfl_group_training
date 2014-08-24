@@ -1,0 +1,6 @@
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'pic_gardener' %>
+<% end %>
+ 
+<% form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) %>
+  <%= g.file_field :pic_gardener %>

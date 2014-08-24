@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+<strong>Information about the Home Gardener's Living Arrangements</strong>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<fieldset>
+<div class="btn-group btn-group-justified">
+      <%= g.label :maritial_status_married, "Married" %>
+      <%= g.radio_button :maritial_status, :married %> <br/>
+      <%= g.label :maritial_status_single, "Single" %>
+      <%= g.radio_button :maritial_status, :single %> <br/>
+        <%= g.label :maritial_status_widow, "Widow" %>
+        <%= g.radio_button :maritial_status, :widow %>
+
+        
+       
+    <div class="form-actions">
+       <%= g.submit 'continue', :class =>  'btn btn-lg btn-success' %>
+     <%= link_to "back", previous_wizard_path, class: "btn btn-lg btn-danger" %>
+<% end %>
+</div>
+</fieldset>

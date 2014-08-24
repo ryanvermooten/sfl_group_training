@@ -1,0 +1,32 @@
+<h2>Grant Amount:</h2>
+
+<h4> how much do you spend on veg in an average month?</h4>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :veg_expenditure_none, "None" %>
+      <%= g.radio_button :veg_expenditure, :none %> <br/>
+
+     <%= g.label :veg_expenditure_R1_to_R50, "R1-R50" %>
+      <%= g.radio_button :veg_expenditure, :R1_to_R50 %> <br/>
+
+      <%= g.label :veg_expenditure_R51_to_R100, "R51-R100" %>
+      <%= g.radio_button :veg_expenditure, :R51_to_R100 %> <br/>
+
+       <%= g.label :veg_expenditure_R101_to_150, "R101-R150" %>
+      <%= g.radio_button :veg_expenditure, :R101_to_R150 %> <br/>
+
+      <%= g.label :veg_expenditure_R151_to_200, "R151-R200" %>
+      <%= g.radio_button :veg_expenditure, :R901_to_R1200 %> <br/>
+
+      <%= g.label :veg_expenditure_R201_to_R250, "R201-R250" %>
+      <%= g.radio_button :veg_expenditure, :R201_to_R250 %> <br/>
+
+      <%= g.label :veg_expenditure_250_plus, "More than R250 a month" %>
+      <%= g.radio_button :veg_expenditure, :R2500_plus %> <br/>
+      
+      <%= g.label :veg_expenditure_na, "Prefer not to answer or don't know" %>
+      <%= g.radio_button :veg_expenditure, :na %> <br/>
+
+    <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

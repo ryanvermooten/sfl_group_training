@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+<%= form_for([@attendance_register.group, @attendance_register]) do |register| %>
+<fieldset>
+<p>
+    <div class="control-group">
+      <%= register.label :training_session_id %><br />
+      <div class="controls">
+      <%= register.collection_select :training_session_id, TrainingSession.order("id ASC"), :id, :name %>
+
+     <% @gardeners.each do |gardener| %>
+            <p>
+             <td><%= image_tag gardener.avatar.url(:thumb), :class => "img-circle" %></td>
+            <td><%= gardener.first_name %></td>
+            <td><%= gardener.last_name %></td>
+            <%= register.check_box :gardener_ids, {:multiple => true }, gardener.id, nil %>
+            </p>
+    </div>
+      </fieldset>
+</div>
+ </p>
+      </div>
+
+<div class="form-actions">
+
+     
+    <% end %> 
+     <%= register.submit 'continue', :class =>  'btn btn-lg btn-success' %>
+<% end %>
+</div>

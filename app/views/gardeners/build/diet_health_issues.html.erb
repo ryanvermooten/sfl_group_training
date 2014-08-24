@@ -1,0 +1,21 @@
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<%= g.label :diet_general_health_excellent, "excellent" %>
+      <%= g.radio_button :diet_general_health, :excellent %> <br/>
+
+      <%= g.label :diet_general_health_very_good, "Very Good" %>
+      <%= g.radio_button :diet_general_health, :very_good %> <br/>
+
+      <%= g.label :diet_general_health_good, "Good" %>
+      <%= g.radio_button :diet_general_health, :good %> <br/>
+
+         <%= g.label :diet_general_health_fair, "Fair" %>
+      <%= g.radio_button :diet_general_health, :fair %> <br/>
+
+      <%= g.label :diet_general_health_poor, "Poor" %>
+      <%= g.radio_button :diet_general_health, :poor %> <br/>
+
+       <%= g.label :diet_general_health_very_poor, "Very Poor" %>
+      <%= g.radio_button :diet_general_health, :very_poor %> <br/>
+      
+    <%= g.submit %><br/>
+    <% end %>

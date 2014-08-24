@@ -1,0 +1,32 @@
+<h2>Grant Amount:</h2>
+
+<h4> how much do you get from your grant?</h4>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :grant_amount_none, "None" %>
+      <%= g.radio_button :grant_amount, :none %> <br/>
+
+     <%= g.label :grant_amount_R1_to_300, "R1-R300" %>
+      <%= g.radio_button :grant_amount, :R1_to_300 %> <br/>
+
+      <%= g.label :grant_amount_R301_to_600, "R301-R600" %>
+      <%= g.radio_button :grant_amount, :R301_to_R600 %> <br/>
+
+       <%= g.label :grant_amount_R601_to_900, "R601-R900" %>
+      <%= g.radio_button :grant_amount, :R601_to_R900 %> <br/>
+
+      <%= g.label :grant_amount_R901_to_1200, "R901-R1200" %>
+      <%= g.radio_button :grant_amount, :R901_to_R1200 %> <br/>
+
+      <%= g.label :grant_amount_R1201_to_R1500, "R1201-R1500" %>
+      <%= g.radio_button :grant_amount, :R1201_to_R1500 %> <br/>
+
+      <%= g.label :grant_amount_R1500_plus, "R1500 or more" %>
+      <%= g.radio_button :grant_amount, :R1500_plus %> <br/>
+      
+      <%= g.label :grant_amount_na, "Prefer not to answer" %>
+      <%= g.radio_button :grant_amount, :na %> <br/>
+
+    <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

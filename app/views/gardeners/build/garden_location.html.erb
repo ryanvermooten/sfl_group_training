@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+<strong>Information about the Home Gardener's garden</strong>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<fieldset>
+<p>
+
+
+  <%= g.label :garden_location, "What is the address where the garden is located?" %> <br>
+  <%= g.text_field :garden_location %>
+   </p>
+
+        <div class="form-actions">
+       <%= g.submit 'continue', :class =>  'btn btn-lg btn-success' %>
+     <%= link_to "back", previous_wizard_path, class: "btn btn-lg btn-danger" %>
+<% end %>
+</div>
+</fieldset>
+

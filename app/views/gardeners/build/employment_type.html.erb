@@ -1,0 +1,24 @@
+<h2>Employment:</h2>
+
+<h2> What form of employment do you have?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :employment_full_time, "Full Time" %>
+      <%= g.radio_button :employment, :full_time %> <br/>
+
+      <%= g.label :employment_part_time, "Part Time" %>
+      <%= g.radio_button :employment, :part_time %> <br/>
+
+      <%= g.label :employment_casual, "Casual" %>
+      <%= g.radio_button :employment, :casual %> <br/>
+
+      <%= g.label :employment_self_employed, "Self employed" %>
+      <%= g.radio_button :employment, :casual %> <br/>
+
+      <%= g.label :employment_freelance, "Freelance" %>
+      <%= g.radio_button :employment, :freelance %> <br/>
+
+
+    <%= g.submit %> <br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

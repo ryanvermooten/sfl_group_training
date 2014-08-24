@@ -1,0 +1,14 @@
+<h2> Garden Size Length</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+  <p>
+
+
+  <%= g.label :garden_size_l %> <br>
+  <%= g.number_field :garden_size_l %>
+   </p>
+
+          <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+
+        <% end %>
+

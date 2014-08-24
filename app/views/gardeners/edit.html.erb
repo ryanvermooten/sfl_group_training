@@ -1,0 +1,7 @@
+<h1> Editing Gardener</h1>
+
+<%= render 'form' %>
+
+<! -- /groups/:group_id/gardeners/id -->
+<%= link_to 'Show', [@gardener.group, @gardener] %> |
+<%= link_to 'back', group_gardeners_path(@gardener.group) %>

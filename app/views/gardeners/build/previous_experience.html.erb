@@ -1,0 +1,12 @@
+<h2>Do you have any previous experience?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<p>
+
+
+<%= g.label :previous_experience, "do you have any previous experience?" %> <br>
+<%= g.check_box :previous_experience %>
+ </p>
+
+       <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

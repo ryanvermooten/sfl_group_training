@@ -1,0 +1,64 @@
+
+<div class="panel panel-default">
+
+<table class="table">
+<thead>
+  <tr>
+    <th>First Name</th>
+    <th> Address </th>
+    <th> Contact Number</th>
+    <th> id number</th>
+  </tr>
+  </thead>
+
+  <% @gardeners.each do |gardener| %>
+  <tr>
+    <td> <%= gardener.first_name %> </td>
+    <td> <%= gardener.address %> </td>
+    <td> <%= gardener.contact_number %></td>
+     <td> <%= gardener.id_number %></td>
+
+    <!-- /groups/:group_id/gardeners/:id -->
+    <td><%= link_to 'Show', [gardener.group, gardener] %></td>
+    <!-- /groups/:group_id/gardener/:id/edit -->
+    <td><%= link_to 'Edit', edit_group_gardener_path(gardener.group, gardener)%></td>
+  </tr>
+  </tr>
+      <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Home Gardener', new_group_gardener_path %> <!-- /groups/group_id/gardeners/new -->
+<%= link_to 'Back', controller: "groups", action: "index", id: @group%>
+
+<div class="panel panel-default">
+
+
+
+  <table class ="table">
+  <thead>
+  <tr>
+  <th> Group Name </th>
+  <th> Area </th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td> 
+        <td><%= group.area %></td>
+        <td><%= link_to 'Show', group_path(group) %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+      </tr>
+
+  </div>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>
+</div>

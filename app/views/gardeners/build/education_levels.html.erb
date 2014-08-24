@@ -1,0 +1,36 @@
+<h2> Education levels/h2>
+  <%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+      <p>
+        <%= g.label :education_levels_not_sure, "Not sure" %>
+        <%= g.radio_button :education_levels, :not_sure %> <br/>
+
+        <%= g.label :education_levels_none, "None" %>
+        <%= g.radio_button :education_levels, :none %> <br/>
+
+        <%= g.label :education_levels_gr_1_to_3, "Grade 1-3 (Sub A - Standard 1)" %>
+        <%= g.radio_button :education_levels, :gr_1_to_3 %> <br/>
+
+        <%= g.label :education_levels_gr_4_to_7, "Grade 4-7 (Standard 2-5)" %>
+        <%= g.radio_button :education_levels, :gr_4_to_7 %> <br/>
+
+        <%= g.label :education_levels_gr_8_to_9, "Grade 8-9 (Standard 6-7)" %>
+        <%= g.radio_button :education_levels, :gr_8_to_9 %> <br/>
+
+        <%= g.label :education_levels_gr_9_to_10, "Grade 10-11 (Standard 8-9)" %>
+        <%= g.radio_button :education_levels, :gr_10_to_11 %> <br/>
+
+        <%= g.label :education_levels_high_school, "Completed High school" %>
+        <%= g.radio_button :education_levels, :some_tertiary %> <br/>
+
+        <%= g.label :education_levels_some_tertiary, "Some Tertiary Education" %>
+        <%= g.radio_button :education_levels, :some_tertiary %> <br/>
+
+        <%= g.label :education_levels_completed_tertiary, "Completed Tertiary Education" %>
+        <%= g.radio_button :education_levels, :completed_tertiary %> <br/>
+
+
+        <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+  <% end %>
+</h2>
+

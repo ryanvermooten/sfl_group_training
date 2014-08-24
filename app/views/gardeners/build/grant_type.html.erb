@@ -1,0 +1,18 @@
+<h2> What type of grant do you recieve?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :grant_type_child_mantaince, "Child mantaince" %>
+      <%= g.radio_button :grant_type, :child_mantaince %> <br/>
+
+      <%= g.label :grant_type_disability, "Disability" %>
+      <%= g.radio_button :grant_type, :disability %> <br/>
+
+      <%= g.label :grant_type_casual, "Casual" %>
+      <%= g.radio_button :grant_type, :casual %> <br/>
+
+      <%= g.label :grant_type_self_old_age, "Old Age" %>
+      <%= g.radio_button :grant_type, :old_age %> <br/>
+      
+    <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

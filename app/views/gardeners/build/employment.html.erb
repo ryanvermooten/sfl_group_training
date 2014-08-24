@@ -1,0 +1,12 @@
+<h2>Employment:</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+
+
+      <%= g.label :employment, "are you currently employed?" %> <br>
+      <%= g.check_box :employment %>
+    </p>
+
+    <%= g.submit %> <br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

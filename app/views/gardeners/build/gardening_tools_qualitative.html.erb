@@ -1,0 +1,9 @@
+<h2> What is your access to water like?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+
+    <%= g.check_box(:gardening_tools, :spade) %>
+    <%= g.label(:gardening_tools_spade, "spade") %>
+
+
+<% end %>

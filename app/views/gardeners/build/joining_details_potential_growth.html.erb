@@ -1,0 +1,14 @@
+<h2> Reason for Gardening</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+
+
+      <%= g.label :joining_details_potential_growth, "Why do you want to grow veg?" %> <br>
+      <%= g.text_field :joining_details_potential_growth %>
+    </p>
+
+    <%= g.submit %>
+    <%= link_to "back", previous_wizard_path %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>
+

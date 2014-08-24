@@ -1,0 +1,14 @@
+<h2> Living arrangements </h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+  <p>
+
+
+  <%= g.label :living_arrangements, "how many people live in your house?" %> <br>
+  <%= g.number_field :living_arrangements %>
+   </p>
+
+          <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+
+        <% end %>
+

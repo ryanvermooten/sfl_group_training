@@ -1,0 +1,12 @@
+<h2> Garden Location</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+  <p>
+
+
+  <%= g.label :help_received_qualitative %> <br>
+  <%= g.text_field :help_received_qualitative %>
+   </p>
+
+          <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+        <% end %>

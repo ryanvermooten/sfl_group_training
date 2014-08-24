@@ -1,0 +1,11 @@
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<p>
+  <!-- Upload your attachments via a simple file_fields in the form -->
+  <div class="field">
+    <%= g.label :avatar %><br>
+    <%= g.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= g.submit %>
+  </div>
+<% end %>

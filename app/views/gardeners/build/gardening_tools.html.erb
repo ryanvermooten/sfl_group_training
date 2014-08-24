@@ -1,0 +1,12 @@
+<h2>Do you have your own gardening tools?:</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<p>
+
+
+<%= g.label :gardening_tools, "do you have any of your own gardening tools?" %> <br>
+<%= g.check_box :gardening_tools %>
+ </p>
+
+       <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

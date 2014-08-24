@@ -1,0 +1,13 @@
+<h2> Joining details/h2>
+  <%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+      <p>
+        <%= g.label :joining_details_referral_sfl_trainer, "A Soil for Life Trainer" %>
+        <%= g.radio_button :joining_details_referral, :sfl_trainer %> <br/>
+        <%= g.label :joining_details_referral_friend, "Friend or neighbour" %>
+        <%= g.radio_button :joining_details_referral, :friend %> <br/>
+        <%= g.label :joining_details_referral_event, "A Soil For Life Event" %>
+        <%= g.radio_button :joining_details_referral, :event %> <br/>
+        <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+  <% end %>
+</h2>

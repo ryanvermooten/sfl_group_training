@@ -1,0 +1,29 @@
+<h2>multiselect form</h2>
+<h2>How much veg does the gardener eat on an avergare day?</h2>
+
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :diet_veg_intake_1, "1" %>
+      <%= g.radio_button :diet_veg_intake, :one %> <br/>
+
+      <%= g.label :diet_veg_intake_2, "2" %>
+      <%= g.radio_button :diet_veg_intake, :two %> <br/>
+
+      <%= g.label :diet_veg_intake_3, "3" %>
+      <%= g.radio_button :diet_veg_intake, :three %> <br/>
+
+      <%= g.label :diet_veg_intake_4, "4" %>
+      <%= g.radio_button :diet_veg_intake, :four %> <br/>
+
+      <%= g.label :diet_veg_intake_5, "5" %>
+      <%= g.radio_button :diet_veg_intake, :five %> <br/>
+
+      <%= g.label :diet_veg_intake_6, "6" %>
+      <%= g.radio_button :diet_veg_intake, :six %> <br/>
+
+
+    <%= g.submit %> <br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>
+
+

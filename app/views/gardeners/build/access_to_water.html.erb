@@ -1,0 +1,24 @@
+<h2> What is your access to water like?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :access_to_water_inside_dwelling, "There is water inside the house" %>
+      <%= g.radio_button :access_to_water, :inside_dwelling %> <br/>
+
+      <%= g.label :access_to_water_inside_yard, "There is water inside the yard, but not in the house" %>
+      <%= g.radio_button :access_to_water, :inside_yard %> <br/>
+
+      <%= g.label :access_to_water_community_stand_less_than_200, "Water is recieved at a community stand less than 200m away" %>
+      <%= g.radio_button :access_to_water, :community_stand_less_than_200 %> <br/>
+
+       <%= g.label :access_to_water_community_stand_between_200_and_500, "Water is recieved at a community stand between 200m to 500m away" %>
+      <%= g.radio_button :access_to_water, :community_between_200_and_500 %> <br/>
+
+         <%= g.label :access_to_water_community_stand_between_500_and_1km, "Water is recieved at a community stand between 500m to 1km away" %>
+      <%= g.radio_button :access_to_water, :community_between_500_and_1km %> <br/>
+
+       <%= g.label :access_to_water_community_stand_futher_than_1km, "Water is recieved at a community stand futher than 1km away" %>
+      <%= g.radio_button :access_to_water, :community_futher_than_1km %> <br/>
+      
+    <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

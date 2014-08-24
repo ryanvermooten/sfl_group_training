@@ -1,0 +1,35 @@
+<h2>Employment:</h2>
+
+<h4> What form of employment do you have?</h4>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+    <p>
+      <%= g.label :earning_power_none, "None" %>
+      <%= g.radio_button :earning_power, :none %> <br/>
+
+     <%= g.label :earning_power_R1_to_R400, "R1-R400" %>
+      <%= g.radio_button :earning_power, :R1_to_R400 %> <br/>
+
+      <%= g.label :earning_power_R401_to_800, "R401-R800" %>
+      <%= g.radio_button :earning_power, :R401_to_R800 %> <br/>
+
+       <%= g.label :earning_power_R801_to_1600, "R801-R1800" %>
+      <%= g.radio_button :earning_power, :R801_to_R1600 %> <br/>
+
+      <%= g.label :earning_power_R1601_to_3200, "R1601-R3200" %>
+      <%= g.radio_button :earning_power, :R801_to_R1600 %> <br/>
+
+      <%= g.label :earning_power_R3201_to_R6400, "R3201-R6400" %>
+      <%= g.radio_button :earning_power, :R3210_to_R6400 %> <br/>
+
+      <%= g.label :earning_power_R6401_to_R12800, "R6401-R12800" %>
+      <%= g.radio_button :earning_power, :R6401_to_R12800 %> <br/>
+
+      <%= g.label :earning_power_R12801_plus, "More than R12800" %>
+      <%= g.radio_button :earning_power, :R6401_to_R12800 %> <br/>
+
+      <%= g.label :earning_power_na, "Prefer not to answer" %>
+      <%= g.radio_button :earning_power, :na %> <br/>
+
+    <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

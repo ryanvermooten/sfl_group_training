@@ -1,0 +1,12 @@
+<h2>Help from other organizations:</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+<p>
+
+
+<%= g.label :other_organizations, "Have you revieved help from any other organizations?" %> <br>
+<%= g.check_box :other_organizations %>
+ </p>
+
+       <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+<% end %>

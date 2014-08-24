@@ -1,0 +1,13 @@
+<h2> Why is the gardener not currently growing?</h2>
+<%= form_for([@gardener.group, @gardener], :url => wizard_path, :method => :put) do |g| %>
+  <p>
+
+
+  <%= g.label :currently_growing_neg %> <br>
+  <%= g.text_field :currently_growing_neg %>
+   </p>
+
+          <%= g.submit %><br/>
+     <%= link_to "back", previous_wizard_path %>
+        <% end %>
+
