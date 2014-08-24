@@ -1,5 +1,8 @@
 class Group < ActiveRecord::Base
 	belongs_to :user
+	  has_many :gardeners
+		accepts_nested_attributes_for :gardeners
+  has_many :attendance_registers
 	has_attached_file :group_picture,
 	:storage => :dropbox,
 	:dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
