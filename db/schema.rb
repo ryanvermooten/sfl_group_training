@@ -11,10 +11,88 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816200855) do
+ActiveRecord::Schema.define(version: 20140824120626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendance_registers", force: true do |t|
+    t.integer  "training_session_id"
+    t.boolean  "attended"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id"
+  end
+
+  create_table "attendance_registers_gardeners", force: true do |t|
+    t.integer "attendance_register_id"
+    t.integer "gardener_id"
+  end
+
+  create_table "attendance_registers_training_sessions", force: true do |t|
+    t.integer "attendance_register_id"
+    t.integer "training_session_id"
+    t.integer "gardener_id"
+  end
+
+  create_table "gardeners", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "contact_number"
+    t.string   "address"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "id_number",                            limit: 8
+    t.string   "state"
+    t.string   "status"
+    t.boolean  "garden_at_home"
+    t.string   "garden_location"
+    t.integer  "garden_size_l"
+    t.integer  "garden_size_w"
+    t.string   "maritial_status"
+    t.integer  "living_arrangements"
+    t.string   "joining_details_referral"
+    t.string   "joining_details_referral_qualitative"
+    t.string   "joining_details_potential_growth"
+    t.string   "education_levels"
+    t.string   "education_levels_other"
+    t.boolean  "employment"
+    t.string   "employment_type"
+    t.string   "earning_power"
+    t.boolean  "grant"
+    t.string   "grant_type"
+    t.string   "grant_amount"
+    t.string   "access_to_water"
+    t.boolean  "gardening_tools"
+    t.string   "gardening_tools_qualitative"
+    t.boolean  "other_organizations"
+    t.string   "other_organizations_qualitative"
+    t.boolean  "help_received"
+    t.string   "help_received_qualitative"
+    t.boolean  "previous_experience"
+    t.string   "previous_experience_qualitative"
+    t.boolean  "currently_growing"
+    t.string   "currently_growing_neg"
+    t.string   "grown_veg_usage"
+    t.string   "grown_veg_other_qualitative"
+    t.string   "veg_bought"
+    t.string   "veg_expenditure"
+    t.integer  "diet_food_intake"
+    t.integer  "diet_veg_intake"
+    t.string   "diet_general_health"
+    t.string   "diet_health_issues"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+  end
+
+  add_index "gardeners", ["group_id"], name: "index_gardeners_on_group_id", using: :btree
 
   create_table "groups", force: true do |t|
     t.string   "group_name"
@@ -27,6 +105,14 @@ ActiveRecord::Schema.define(version: 20140816200855) do
     t.string   "group_picture_content_type"
     t.integer  "group_picture_file_size"
     t.datetime "group_picture_updated_at"
+  end
+
+  create_table "training_sessions", force: true do |t|
+    t.integer  "attendance_registers_id"
+    t.string   "name"
+    t.integer  "date_held"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

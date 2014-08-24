@@ -16,7 +16,7 @@ gem 'pundit'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "dropbox-api"
 group :development do
-  gem 'better_errors'
+ # gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'

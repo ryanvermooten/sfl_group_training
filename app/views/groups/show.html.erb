@@ -1,21 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Group name:</strong>
-  <%= @group.group_name %>
+<div class="panel panel-default">
+<strong>Home Gardeners in this group</strong>
 </p>
+<table class="table">
+  <thead>
+  <tr>
+  <th>  </th>
+    <th> First Name </th>
+    <th> Address</th>
+    <th> Contact Number</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @group.gardeners.each do |gardener| %>
+      <tr>
+        <td><%= image_tag gardener.avatar(:thumb), :class => "img-circle" %></td>
+        <td><%= gardener.first_name %></td>
+        <td><%= gardener.address %></td>
+        <td><%= gardener.contact_number %></td>
+        <td><%= link_to 'Show', [gardener.group, gardener], class: "btn btn-sm btn-success" %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Area:</strong>
-  <%= @group.area %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
-
-<%= image_tag @group.group_picture.url(:medium), class: "img_thumbail" %>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'New Home Gardener', new_group_gardener_path(@group), class: "btn btn-sm btn-success" %> 
+<%= link_to 'New Attendance Register', new_group_attendance_register_path(@group), class: "btn btn-sm btn-primary" %>
+<%= link_to 'Back', groups_path, class: "btn btn-sm btn-danger" %> 
+</div>
