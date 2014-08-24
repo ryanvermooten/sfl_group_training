@@ -15,6 +15,8 @@ gem 'devise'
 gem 'pundit'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "dropbox-api"
+gem 'delayed_job_active_record'
+gem 'delayed_paperclip'
 group :development do
  # gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

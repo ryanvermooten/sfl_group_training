@@ -16,6 +16,7 @@ class Gardener < ActiveRecord::Base
 	:unique_filename => true   
 }
 validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+ process_in_background :avatar, :processing_image_url => "/images/original/animation_processing.gif"
 end
  
   #mount_uploader :image, ImageUploader
